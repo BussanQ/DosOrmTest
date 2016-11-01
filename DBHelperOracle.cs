@@ -265,5 +265,50 @@ namespace WinFormTest
             }
             return dataType;
         }
+
+        /**
+          * 根据数据类型获取OracleDbType
+          */
+        private static OracleDbType GetOracleDbType(object value)
+        {
+            OracleDbType dataType = OracleDbType.Varchar2;
+            if (value is string[])
+            {
+                dataType = OracleDbType.Varchar2;
+            }
+            else if (value is DateTime[])
+            {
+                dataType = OracleDbType.TimeStamp;
+            }
+            else if (value is int[] || value is short[])
+            {
+                dataType = OracleDbType.Int32;
+            }
+            else if (value is long[])
+            {
+                dataType = OracleDbType.Int64;
+            }
+            else if (value is decimal[] || value is double[] || value is float[])
+            {
+                dataType = OracleDbType.Decimal;
+            }
+            else if (value is Guid[])
+            {
+                dataType = OracleDbType.Varchar2;
+            }
+            else if (value is bool[] || value is Boolean[])
+            {
+                dataType = OracleDbType.Byte;
+            }
+            else if (value is byte[])
+            {
+                dataType = OracleDbType.Blob;
+            }
+            else if (value is char[])
+            {
+                dataType = OracleDbType.Char;
+            }
+            return dataType;
+        }
     }
 }
