@@ -11,6 +11,10 @@ namespace WinFormTest
         public string linkdirid { get; set; }
         public string linkdirname { get; set; }
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
     public class CROSSDIR5MFLOW
     {
         public string id { get; set; }

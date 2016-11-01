@@ -21,7 +21,7 @@ namespace WinFormTest
         {
             DB data = new DB();
             //string str= data.start();
-           string str = data.startOracle();
+            string str = data.startOracle();
             txtBox.Text = str;
         }
     }
